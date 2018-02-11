@@ -9,8 +9,20 @@
     left: 0;
     width: 100%;
     min-height: 100%;
-    background: #f66;
-    color: #fff;
+    background: #fff;
+    color: #e20051;
+    .page-content {
+      padding: 130rpx 0;
+      width: 100%;
+      .list-item {
+        box-sizing: border-box;
+        padding: 0 60rpx;
+        text-align: left;
+        font-size: 32rpx;
+        line-height: 100rpx;
+        border-bottom: 2rpx solid #e20051;
+      }
+    }
   }
   .page-top {
     position: absolute;
@@ -18,34 +30,34 @@
     left: 0;
     width: 100%;
     min-height: 100%;
-    background: #66f;
-    color: #fff;
+    background: #eaeaea;
+    color: #333;
     transition: 300ms;
-  }
-  .c-state2{
-    transform: rotate(0deg) scale(.8) translate(75%,0%);
+    box-shadow: 0 0 60rpx 6rpx rgba(0,0,0,.3);
+    &.c-state{
+      transform: rotate(0deg) scale(.8) translate(75%,0%);
+    }
   }
 </style>
 <template>
   <view class="page" catchtap="tap_close">
     <view class="page-bottom">
       <view class="page-content">
-        <view  class="wc">
-          <text>第一个item1</text>
+        <view class="list-item">
+          <text>改修工厂</text>
         </view>
-        <view  class="wc">
-          <text>第二个item2</text>
+        <view class="list-item">
+          <text>任务查询</text>
         </view>
-        <view  class="wc">
-          <text>第三个item3</text>
-        </view>
-        <view  class="wc">
-          <text>第四个item4</text>
+        <view class="list-item">
+          <text>舰娘信息</text>
         </view>
       </view>
+      <image src="/images/akashi.jpg" style="width:270rpx;height: 504rpx;margin-left: 60rpx;"></image>
     </view>
-    <view class="page-top {{open ? 'c-state2' : ''}}" catchtap="tap_close">
+    <view class="page-top {{open ? 'c-state' : ''}}" catchtap="tap_close">
       <view catchtap="tap_open">点我</view>
+      <text>这是主页</text>
     </view>
   </view>
 </template>
